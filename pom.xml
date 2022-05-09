@@ -50,21 +50,30 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.testSource>11</maven.compiler.testSource>
+        <maven.compiler.testTarget>11</maven.compiler.testTarget>
+        <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <copyright>2019 - 2022</copyright>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 
-        <spring.boot.starter.log4j.version>1.3.8.RELEASE</spring.boot.starter.log4j.version>
-
         <spring-cloud.version>2020.0.0</spring-cloud.version>
-
-        <lombok.version>1.18.22</lombok.version>
 
         <junit.version>5.6.2</junit.version>
         <lombok.version>1.18.22</lombok.version>
+        <jna.version>5.9.0</jna.version>
+
+        <jackson.core.version>2.11.4</jackson.core.version>
+        <jackson.datatype.version>2.5.1</jackson.datatype.version>
 
         <springfox.swagger2.version>2.9.2</springfox.swagger2.version>
+
+        <com.zestic.core.version>1.0</com.zestic.core.version>
+        <com.zestic.common.version>1.0</com.zestic.common.version>
+        <com.zestic.crypto.version>1.0</com.zestic.crypto.version>
+        <com.zestic.settings.version>1.0</com.zestic.settings.version>
+        <com.zestic.socket.version>1.0</com.zestic.socket.version>
     </properties>
 
     <dependencyManagement>
@@ -75,6 +84,19 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j.version}</version>
             </dependency>
 
             <!-- add all dependencies here so child can inherit-->
@@ -99,12 +121,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <!--Log4j dependency-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j</artifactId>
-            <version>${spring.boot.starter.log4j.version}</version>
         </dependency>
 
         <dependency>
@@ -161,5 +177,16 @@
         </profile>
 
     </profiles>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
