@@ -64,6 +64,8 @@
         <lombok.version>1.18.22</lombok.version>
         <jna.version>5.9.0</jna.version>
 
+        <com.google.guava.version>31.1-jre</com.google.guava.version>
+
         <jackson.core.version>2.11.4</jackson.core.version>
         <jackson.datatype.version>2.5.1</jackson.datatype.version>
 
@@ -97,6 +99,23 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${com.google.guava.version}</version>
             </dependency>
 
             <!-- add all dependencies here so child can inherit-->
