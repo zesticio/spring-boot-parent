@@ -15,17 +15,13 @@
             </configuration>
         </server>
         <server>
-<!--            <username>${env.ARTIFACTORY_USERNAME}</username>-->
-<!--            <password>${env.ARTIFACTORY_TOKEN}</password>-->
-            <username>zestic.solutions@gmail.com</username>
-            <password>AKCp8mYy8EwMFj9kgtWdmQnjEqWAxBNx9PYka6bcR3H4A3EH5271P155rwciNzz7fyg5jAWhT</password>
+            <username>${env.ARTIFACTORY_USERNAME}</username>
+            <password>${env.ARTIFACTORY_TOKEN}</password>
             <id>central</id>
         </server>
         <server>
-<!--            <username>${env.ARTIFACTORY_USERNAME}</username>-->
-<!--            <password>${env.ARTIFACTORY_TOKEN}</password>-->
-            <username>zestic.solutions@gmail.com</username>
-            <password>AKCp8mYy8EwMFj9kgtWdmQnjEqWAxBNx9PYka6bcR3H4A3EH5271P155rwciNzz7fyg5jAWhT</password>
+            <username>${env.ARTIFACTORY_USERNAME}</username>
+            <password>${env.ARTIFACTORY_TOKEN}</password>
             <id>snapshots</id>
         </server>
     </servers>
