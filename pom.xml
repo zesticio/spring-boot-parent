@@ -50,6 +50,8 @@
     <properties>
         <java.version>11</java.version>
 
+        <project.scm.id>github</project.scm.id>
+
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <resource.delimiter>@</resource.delimiter>
@@ -67,7 +69,8 @@
 
         <!--cache-->
         <org.mapdb.version>3.0.8</org.mapdb.version>
-        <com.github.vladimir.bukhtoyarov.bucket4j.core.version>7.5.0</com.github.vladimir.bukhtoyarov.bucket4j.core.version>
+        <com.github.vladimir.bukhtoyarov.bucket4j.core.version>7.5.0
+        </com.github.vladimir.bukhtoyarov.bucket4j.core.version>
 
         <!--testing-->
         <junit.version>5.6.2</junit.version>
@@ -148,11 +151,11 @@
                 <version>2.4.1</version>
             </dependency>
 
-<!--            <dependency>-->
-<!--                <groupId>org.springframework</groupId>-->
-<!--                <artifactId>spring-webmvc</artifactId>-->
-<!--                <version>${org.springframework.webmvc.version}</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.springframework</groupId>-->
+            <!--                <artifactId>spring-webmvc</artifactId>-->
+            <!--                <version>${org.springframework.webmvc.version}</version>-->
+            <!--            </dependency>-->
 
             <dependency>
                 <groupId>org.javassist</groupId>
@@ -389,34 +392,48 @@
 
     <profiles>
         <profile>
-            <id>coverage</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.jacoco</groupId>
-                        <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.5</version>
-                        <executions>
-                            <!-- Prepares the property pointing to the JaCoCo runtime agent which is passed as
-                                 VM argument when Maven the Surefire plugin is executed. -->
-                            <execution>
-                                <id>pre-unit-test</id>
-                                <goals>
-                                    <goal>prepare-agent</goal>
-                                </goals>
-                            </execution>
-                            <!-- Ensures that the code coverage report for unit tests is created after unit tests have
-                                 been run. -->
-                            <execution>
-                                <id>post-unit-test</id>
-                                <goals>
-                                    <goal>report</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
+            <id>github-actions</id>
+            <activation>
+                <property>
+                    <name>env.BUILD_ENV</name>
+                    <value>github-actions</value>
+                </property>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>central</id>
+                    <name>zesticio-central-libs-release</name>
+                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-release</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>zestic</id>
+                    <name>zesticio-central-libs-release</name>
+                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-release</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>bintray-plugins</name>
+                    <url>https://jcenter.bintray.com</url>
+                </pluginRepository>
+            </pluginRepositories>
         </profile>
     </profiles>
 
@@ -480,28 +497,37 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--checkstyle-->
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-checkstyle-plugin</artifactId>-->
-            <!--                <configuration>-->
-            <!--                    <configLocation>checkstyle.xml</configLocation>-->
-            <!--                    <headerLocation>checkstyle-header.txt</headerLocation>-->
-            <!--                    <encoding>UTF-8</encoding>-->
-            <!--                    <consoleOutput>true</consoleOutput>-->
-            <!--                    <failOnViolation>true</failOnViolation>-->
-            <!--                    <includeTestSourceDirectory>true</includeTestSourceDirectory>-->
-            <!--                </configuration>-->
-            <!--                <executions>-->
-            <!--                    <execution>-->
-            <!--                        <id>checkstyle-validation</id>-->
-            <!--                        <phase>validate</phase>-->
-            <!--                        <goals>-->
-            <!--                            <goal>check</goal>-->
-            <!--                        </goals>-->
-            <!--                    </execution>-->
-            <!--                </executions>-->
-            <!--            </plugin>-->
+            <!--maven release plugin-->
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M6</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jfrog.buildinfo</groupId>
+                <artifactId>artifactory-maven-plugin</artifactId>
+                <version>2.7.0</version>
+                <inherited>false</inherited>
+                <executions>
+                    <execution>
+                        <id>build-info</id>
+                        <goals>
+                            <goal>publish</goal>
+                        </goals>
+                        <configuration>
+                            <publisher>
+                                <contextUrl>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-release</contextUrl>
+                                <username>stream-github-actions</username>
+                                <password>${env.ARTIFACTORY_TOKEN}</password>
+                                <repoKey>libs-release-local</repoKey>
+                                <snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+                            </publisher>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
 
         <pluginManagement>

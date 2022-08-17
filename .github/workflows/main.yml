@@ -19,7 +19,23 @@ jobs:
           distribution: 'corretto'
           java-version: '11'
 
+      - name: Setup Maven settings.xml
+        uses: whelk-io/maven-settings-xml-action@v11
+        with:
+          servers: |
+            '[
+              {
+                "id": "artifactory",
+                "username": "${env.ARTIFACTORY_USERNAME_REF}",
+                "password": "${env.ARTIFACTORY_TOKEN_REF}"
+              }
+            ]'
+
       - name: Build with Maven
+        env:
+          ARTIFACTORY_USERNAME_REF: ${{ secrets.ARTIFACTORY_USERNAME }}
+          ARTIFACTORY_TOKEN_REF: ${{ secrets.ARTIFACTORY_TOKEN }}
+          BUILD_ENV: 'github-actions'
         run: mvn clean package
 
       - name: Publish to JFrog Artifactory
