@@ -13,10 +13,10 @@
     <artifactId>parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>zestic-springboot-parent</name>
+    <name>spring-boot-parent</name>
 
     <description>The Zestic.IO Parent POM provides common settings for all Zestic components.</description>
-    <url>https://github.com/zesticio/zestic-springboot-parent</url>
+    <url>https://github.com/zesticio/spring-boot-parent</url>
     <inceptionYear>2019</inceptionYear>
 
     <licenses>
@@ -42,9 +42,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/zesticio/zestic-springboot-parent.git</connection>
-        <developerConnection>scm:git:ssh://github.com/zesticio/zestic-springboot-parent.git</developerConnection>
-        <url>https://github.com/zesticio/zestic-springboot-parent</url>
+        <connection>scm:git:git://github.com/zesticio/spring-boot-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com/zesticio/spring-boot-parent.git</developerConnection>
+        <url>https://github.com/zesticio/spring-boot-parent</url>
     </scm>
 
     <properties>
