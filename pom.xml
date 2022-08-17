@@ -390,53 +390,6 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>github-actions</id>
-            <activation>
-                <property>
-                    <name>env.BUILD_ENV</name>
-                    <value>github-actions</value>
-                </property>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>central</id>
-                    <name>zesticio-central-libs-release</name>
-                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-release</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </repository>
-            </repositories>
-
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>zestic</id>
-                    <name>zesticio-central-libs-release</name>
-                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-release</url>
-                    <releases>
-                        <enabled>true</enabled>
-                    </releases>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                </pluginRepository>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>bintray-plugins</name>
-                    <url>https://jcenter.bintray.com</url>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-    </profiles>
-
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
