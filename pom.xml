@@ -325,6 +325,63 @@
 
 
             <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>core</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>buffer</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>coin</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>crypto</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>dispatch</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>jredis</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>json</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>settings</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>socket</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zestic</groupId>
+                <artifactId>system</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>com.zestic.springboot.common</groupId>
                 <artifactId>spring-boot-starter-activemq</artifactId>
                 <version>${com.zestic.tools.common.version}</version>
