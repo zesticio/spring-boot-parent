@@ -114,6 +114,8 @@
 
         <org.modelmapper.version>3.1.0</org.modelmapper.version>
 
+        <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
+
         <!--tools-->
         <com.zestic.tools.core.version>1.0.0</com.zestic.tools.core.version>
         <com.zestic.tools.buffer.version>1.0.0</com.zestic.tools.buffer.version>
@@ -260,6 +262,12 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>${slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
             </dependency>
 
             <dependency>
@@ -478,6 +486,13 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>1.3.1.Final</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
             <!--To get Javadoc and Source jar files generated, you have to configure the Javadoc and source Maven plugins.-->
