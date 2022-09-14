@@ -324,76 +324,18 @@
                 <version>${org.apache.poi.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.yaml</groupId>
-                <artifactId>snakeyaml</artifactId>
-                <version>${org.yaml.snakeyaml.version}</version>
-                <optional>true</optional>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.yaml</groupId>-->
+<!--                <artifactId>snakeyaml</artifactId>-->
+<!--                <version>${org.yaml.snakeyaml.version}</version>-->
+<!--                <optional>true</optional>-->
+<!--            </dependency>-->
 
             <dependency>
                 <groupId>com.github.vladimir-bukhtoyarov</groupId>
                 <artifactId>bucket4j-core</artifactId>
                 <version>${com.github.vladimir.bukhtoyarov.bucket4j.core.version}</version>
             </dependency>
-
-
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>core</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>common</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>buffer</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>coin</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>crypto</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>dispatch</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>jredis</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>json</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>settings</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>socket</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zestic</groupId>
-                <artifactId>system</artifactId>
-                <version>1.0.0</version>
-            </dependency>
-
 
             <dependency>
                 <groupId>com.zestic.springboot.common</groupId>
