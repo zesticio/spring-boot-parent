@@ -19,6 +19,12 @@
     <url>https://github.com/zesticio/spring-boot-parent</url>
     <inceptionYear>2019</inceptionYear>
 
+    <scm>
+        <connection>scm:git:git://github.com/zesticio/spring-boot-parent.git</connection>
+        <developerConnection>scm:git:ssh://github.com/zesticio/spring-boot-parent.git</developerConnection>
+        <url>https://github.com/zesticio/spring-boot-parent</url>
+    </scm>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -40,12 +46,6 @@
             <organizationUrl>https://wwww.zestic.in</organizationUrl>
         </developer>
     </developers>
-
-    <scm>
-        <connection>scm:git:git://github.com/zesticio/spring-boot-parent.git</connection>
-        <developerConnection>scm:git:ssh://github.com/zesticio/spring-boot-parent.git</developerConnection>
-        <url>https://github.com/zesticio/spring-boot-parent</url>
-    </scm>
 
     <properties>
         <java.version>11</java.version>
@@ -153,12 +153,6 @@
                 <artifactId>spring-boot-starter-validation</artifactId>
                 <version>2.4.1</version>
             </dependency>
-
-            <!--            <dependency>-->
-            <!--                <groupId>org.springframework</groupId>-->
-            <!--                <artifactId>spring-webmvc</artifactId>-->
-            <!--                <version>${org.springframework.webmvc.version}</version>-->
-            <!--            </dependency>-->
 
             <dependency>
                 <groupId>org.javassist</groupId>
