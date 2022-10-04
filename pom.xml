@@ -510,7 +510,7 @@
                 </pluginManagement>
             </build>
             <properties>
-                <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+                <gpg.passphrase>45DE8729ABF61053BBAF280487CF349E9A03C42D</gpg.passphrase>
             </properties>
         </profile>
     </profiles>

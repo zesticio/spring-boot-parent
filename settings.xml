@@ -25,21 +25,9 @@
             <id>snapshots</id>
         </server>
         <server>
-            <id>ossrh</id>
-            <username>${env.OSSRH_JIRA_ID}</username>
-            <password>${env.OSSRH_JIRA_PASSWORD}!</password>
+            <id>${server}</id>
+            <username>eJjlCsNs</username>
+            <password>U9+z8pZyFI0jk11dXcMX1DkFdCqlQKM+YELnymqcb7CV</password>
         </server>
     </servers>
-    <profiles>
-        <profile>
-            <id>sign</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <gpg.passphrase>Reset@123</gpg.passphrase>
-            </properties>
-        </profile>
-    </profiles>
-
 </settings>
