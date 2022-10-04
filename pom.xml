@@ -509,6 +509,9 @@
                     </plugins>
                 </pluginManagement>
             </build>
+            <properties>
+                <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+            </properties>
         </profile>
     </profiles>
 
