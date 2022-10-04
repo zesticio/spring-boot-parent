@@ -24,42 +24,10 @@
             <password>${env.ARTIFACTORY_TOKEN}</password>
             <id>snapshots</id>
         </server>
+        <server>
+            <id>ossrh</id>
+            <username>${env.OSSRH_JIRA_ID}</username>
+            <password>${env.OSSRH_JIRA_PASSWORD}!</password>
+        </server>
     </servers>
-    <profiles>
-        <profile>
-            <repositories>
-                <repository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>zesticio-central-libs-release</name>
-                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-release</url>
-                </repository>
-                <repository>
-                    <snapshots/>
-                    <id>snapshots</id>
-                    <name>zesticio-central-libs-snapshot</name>
-                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-snapshot</url>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <snapshots/>
-                    <id>snapshots</id>
-                    <name>zesticio-central-libs-snapshot</name>
-                    <url>https://zesticio.jfrog.io/artifactory/zesticio-central-libs-snapshot</url>
-                </pluginRepository>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>bintray-plugins</name>
-                    <url>https://jcenter.bintray.com</url>
-                </pluginRepository>
-            </pluginRepositories>
-            <id>artifactory</id>
-        </profile>
-    </profiles>
 </settings>
