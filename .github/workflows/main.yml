@@ -30,10 +30,12 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '11'
-      - name: Deploy to Jfrog Registry
+      - name: Deploy to central repository
         env:
           ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
           ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-        run: mvn --settings settings.xml --file pom.xml deploy
+          OSSRH_JIRA_ID: ${{ secrets.OSSRH_JIRA_ID }}
+          OSSRH_JIRA_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
+        run: mvn --settings settings.xml --file pom.xml deploy -P release
