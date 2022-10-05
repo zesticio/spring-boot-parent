@@ -37,6 +37,10 @@ jobs:
           echo "${{ secrets.OSSRH_GPG_SECRET_KEY }}" > secret.txt
           gpg --import secret.txt
 
+      - name: Create settings.xml
+        run: |
+          echo "${{ secrets.SETTINGS }}" > settings.xml
+
       - name: List keys
         run: |
           gpg --list-secret-keys --keyid-format LONG
