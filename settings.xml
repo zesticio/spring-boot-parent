@@ -14,42 +14,5 @@
                 <email>${env.EMAIL}</email>
             </configuration>
         </server>
-        <server>
-            <id>ossrh</id>
-            <username>${env.MAVEN_USERNAME}</username>
-            <password>${env.MAVEN_PASSWORD}</password>
-        </server>
     </servers>
-    <profiles>
-        <profile>
-            <id>ossrh</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <gpg.executable>gpg</gpg.executable>
-                <gpg.passphrase>${env.OSSRH_GPG_SECRET_KEY_PASSWORD}</gpg.passphrase>
-            </properties>
-        </profile>
-        <profile>
-            <id>snapshot</id>
-            <repositories>
-                <repository>
-                    <id>nexus-snapshot-repo</id>
-                    <name>nexus-snapshot-repo</name>
-                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
-                </repository>
-            </repositories>
-        </profile>
-        <profile>
-            <id>release</id>
-            <repositories>
-                <repository>
-                    <id>nexus-release-repo</id>
-                    <name>nexus-release-repo</name>
-                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
 </settings>
