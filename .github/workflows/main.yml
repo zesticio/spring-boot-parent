@@ -33,21 +33,24 @@ jobs:
 
       - id: install-secret-key
         name: Install gpg secret key
-        uses: crazy-max/ghaction-import-gpg@v5
+        run: gpg -K
         with:
           gpg_private_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
           passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
           git_user_signingkey: true
           git_commit_gpgsign: true
       - name: List keys
-        run: gpg -K
+        run: |
+          echo ${{ secrets.OSSRH_GPG_SECRET_KEY }} > secret.txt
+          gpg --import secret.txt
+          gpg --list-secret-keys --keyid-format LONG
 
-      - name: Deploy to central repository
-        env:
-          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-          ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
-          MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_ID }}
-          MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
-        run: mvn --settings settings.xml --file pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} clean deploy -P release
+#      - name: Deploy to central repository
+#        env:
+#          ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
+#          ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
+#          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+#          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+#          MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_ID }}
+#          MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
+#        run: mvn --settings settings.xml --file pom.xml --no-transfer-progress --batch-mode -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} clean deploy -P release
