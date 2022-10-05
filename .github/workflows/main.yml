@@ -34,7 +34,7 @@ jobs:
       - id: install-secret-key
         name: Install gpg secret key
         run: |
-          gpg --import ${{ secrets.OSSRH_GPG_SECRET_KEY }}
+          gpg --import "${{ secrets.OSSRH_GPG_SECRET_KEY }}"
           gpg --list-secret-keys --keyid-format LONG
 
       - name: Deploy to central repository
