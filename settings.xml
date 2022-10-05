@@ -24,10 +24,5 @@
             <password>${env.ARTIFACTORY_TOKEN}</password>
             <id>snapshots</id>
         </server>
-        <server>
-            <id>${server}</id>
-            <username>eJjlCsNs</username>
-            <password>U9+z8pZyFI0jk11dXcMX1DkFdCqlQKM+YELnymqcb7CV</password>
-        </server>
     </servers>
 </settings>
