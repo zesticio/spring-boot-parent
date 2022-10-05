@@ -38,8 +38,7 @@ jobs:
           gpg --import secret.txt
 
       - name: List keys
-        run: |
-          gpg --list-secret-keys --keyid-format LONG
+        run: gpg --list-secret-keys --keyid-format LONG
 
       - name: Deploy to central repository
         env:
@@ -49,10 +48,10 @@ jobs:
           MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
           OSSRH_GPG_SECRET_KEY_PASSWORD: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
         run: |
-          mvn \
-          --settings settings.xml \
-          --file pom.xml \
-#          --no-transfer-progress \
-#          --batch-mode \
-#          -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} \
-          clean deploy -P release
+               mvn \
+               --settings settings.xml \
+               --file pom.xml \
+          #          --no-transfer-progress \
+          #          --batch-mode \
+          #          -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} \
+               clean deploy -P release
