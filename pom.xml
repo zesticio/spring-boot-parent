@@ -245,6 +245,12 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <dependency>
+                <groupId>com.squareup.retrofit2</groupId>
+                <artifactId>converter-jaxb</artifactId>
+                <version>${com.squareup.retrofit2.version}</version>
+                <scope>test</scope>
+            </dependency>
 
             <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
             <dependency>
