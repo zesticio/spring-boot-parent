@@ -33,16 +33,12 @@ jobs:
 
       - id: install-secret-key
         name: Install gpg secret key
-        run: gpg -K
-        with:
-          gpg_private_key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-          passphrase: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-          git_user_signingkey: true
-          git_commit_gpgsign: true
-      - name: List keys
         run: |
           echo ${{ secrets.OSSRH_GPG_SECRET_KEY }} > secret.txt
           gpg --import secret.txt
+
+      - name: List keys
+        run: |
           gpg --list-secret-keys --keyid-format LONG
 
 #      - name: Deploy to central repository
