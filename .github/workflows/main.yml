@@ -35,18 +35,15 @@ jobs:
           server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
           gpg-passphrase: OSSRH_GPG_SECRET_KEY_PASSWORD
-
+      - name: build artifact
+        run: mvn clean package
       - id: install-secret-key
         name: Install gpg secret key
         run: |
           echo "${{ secrets.OSSRH_GPG_SECRET_KEY }}" > secret.txt
           gpg --import secret.txt
           gpg --list-secret-keys --keyid-format LONG
-
-#      - name: List keys
-#        run: gpg --list-secret-keys --keyid-format LONG
-
-      - name: Deploy to central repository
+      - name: Publish to the Maven Central Repository
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
@@ -57,4 +54,6 @@ jobs:
           mvn \
           --settings settings.xml \
           --file pom.xml \
-          clean deploy -P release
+          --no-transfer-progress \
+          --batch-mode \
+          clean deploy
