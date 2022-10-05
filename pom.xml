@@ -11,7 +11,7 @@
     </parent>
     <groupId>in.zestic</groupId>
     <artifactId>spring-boot-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
     <name>spring-boot-parent</name>
     <url>http://www.zestic.in</url>
