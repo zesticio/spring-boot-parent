@@ -40,6 +40,7 @@ jobs:
       - name: Create settings.xml
         run: |
           echo "${{ secrets.SETTINGS }}" > settings.xml
+          cat settings.xml
 
       - name: List keys
         run: |
