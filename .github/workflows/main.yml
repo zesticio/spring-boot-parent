@@ -7,19 +7,6 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Setup Java SDK 11
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'corretto'
-          java-version: '11'
-      - name: Build with Maven
-        run: mvn clean install
-
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -52,8 +39,6 @@ jobs:
           OSSRH_GPG_SECRET_KEY_PASSWORD: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
         run: |
           mvn \
-          --settings settings.xml \
-          --file pom.xml \
           --no-transfer-progress \
           --batch-mode \
           clean deploy
