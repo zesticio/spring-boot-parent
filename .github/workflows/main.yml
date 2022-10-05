@@ -37,23 +37,17 @@ jobs:
           echo "${{ secrets.OSSRH_GPG_SECRET_KEY }}" > secret.txt
           gpg --import secret.txt
 
-      - name: Create settings.xml
-        run: |
-          echo "${{ secrets.SETTINGS }}" > settings.xml
-          cat settings.xml
-
       - name: List keys
         run: |
           gpg --list-secret-keys --keyid-format LONG
 
       - name: Deploy to central repository
         env:
-          #ARTIFACTORY_USERNAME: ${{ secrets.ARTIFACTORY_USERNAME }}
-          #ARTIFACTORY_TOKEN: ${{ secrets.ARTIFACTORY_TOKEN }}
-          #DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          #DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
           MAVEN_USERNAME: ${{ secrets.OSSRH_JIRA_ID }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_JIRA_PASSWORD }}
+          OSSRH_GPG_SECRET_KEY_PASSWORD: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
         run: |
           mvn \
           --settings settings.xml \
