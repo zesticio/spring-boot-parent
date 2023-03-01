@@ -9,13 +9,13 @@
         <version>2.6.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>in.zestic</groupId>
+    <groupId>io.zestic</groupId>
     <artifactId>spring-boot-parent</artifactId>
     <version>1.0.1</version>
     <packaging>pom</packaging>
     <name>spring-boot-parent</name>
-    <url>http://www.zestic.in</url>
-    <description>Zestic parent BOM</description>
+    <url>http://www.zestic.io</url>
+    <description>Springboot Parent</description>
     <inceptionYear>2019</inceptionYear>
 
     <licenses>
@@ -34,9 +34,9 @@
     <developers>
         <developer>
             <name>Zestic Team</name>
-            <email>contact@zestic.in</email>
+            <email>contact@zestic.io</email>
             <organization>Zestic IT Solutions</organization>
-            <organizationUrl>https://wwww.zestic.in</organizationUrl>
+            <organizationUrl>https://wwww.zestic.io</organizationUrl>
         </developer>
     </developers>
 
