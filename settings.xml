@@ -15,21 +15,16 @@
             </configuration>
         </server>
         <server>
-            <id>ossrh</id>
+            <id>sonatype-nexus-snapshots</id>
+            <username>${env.OSSRH_JIRA_ID}</username>
+            <password>${env.OSSRH_JIRA_PWD}</password>
+        </server>
+        <server>
+            <id>sonatype-nexus-staging</id>
             <username>${env.OSSRH_JIRA_ID}</username>
             <password>${env.OSSRH_JIRA_PWD}</password>
         </server>
     </servers>
     <profiles>
-        <profile>
-            <id>ossrh</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <gpg.executable>gpg2</gpg.executable>
-                <gpg.passphrase>${env.OSSRH_GPG_SECRET_KEY_PASSWORD}</gpg.passphrase>
-            </properties>
-        </profile>
     </profiles>
 </settings>
