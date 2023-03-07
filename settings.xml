@@ -17,12 +17,12 @@
         <server>
             <id>sonatype-nexus-snapshots</id>
             <username>${env.OSSRH_JIRA_ID}</username>
-            <password>${env.OSSRH_JIRA_PWD}</password>
+            <password>${env.OSSRH_JIRA_PASSWORD}</password>
         </server>
         <server>
             <id>sonatype-nexus-staging</id>
             <username>${env.OSSRH_JIRA_ID}</username>
-            <password>${env.OSSRH_JIRA_PWD}</password>
+            <password>${env.OSSRH_JIRA_PASSWORD}</password>
         </server>
     </servers>
     <profiles>
