@@ -36,3 +36,7 @@ To sign your Maven-built jar files within your GitHub Actions workflow. You can 
               clean deploy
         ```
     2. After a couple of hours, verify that the artifact got published to The Central Repository
+   
+
+Command to send your key
+gpg --keyserver hkp://keyserver.ubuntu.com --send-key "KEY"

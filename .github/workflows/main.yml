@@ -17,7 +17,7 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '11'
-          server-id: ossrh
+          server-id: sonatype-nexus-staging
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
       - name: build artifact
