@@ -16,13 +16,13 @@
         </server>
         <server>
             <id>sonatype-nexus-snapshots</id>
-            <username>${{ secrets.OSSRH_JIRA_ID }}</username>
-            <password>${{ secrets.OSSRH_JIRA_PASSWORD }}</password>
+            <username>eJjlCsNs</username>
+            <password>U9+z8pZyFI0jk11dXcMX1DkFdCqlQKM+YELnymqcb7CV</password>
         </server>
         <server>
             <id>sonatype-nexus-release</id>
-            <username>${{ secrets.OSSRH_JIRA_ID }}</username>
-            <password>${{ secrets.OSSRH_JIRA_PASSWORD }}</password>
+            <username>eJjlCsNs</username>
+            <password>U9+z8pZyFI0jk11dXcMX1DkFdCqlQKM+YELnymqcb7CV</password>
         </server>
     </servers>
     <!--    <profiles>-->
