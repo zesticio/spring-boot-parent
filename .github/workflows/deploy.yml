@@ -36,6 +36,7 @@ jobs:
           cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
 
+
       - id: publish-to-central
         name: publish to central repository
         env:
