@@ -21,8 +21,8 @@ jobs:
           distribution: 'corretto'
           java-version: '11'
           server-id: nexus
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
+          server-username: ${{ secrets.OSSRH_JIRA_ID }}
+          server-password: ${{ secrets.OSSRH_JIRA_PASSWORD }}
 
       - id: install-secret-key
         name: install gpg secret key
