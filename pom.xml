@@ -409,13 +409,13 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
+            <id>sonatype-nexus</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
-<!--        <repository>-->
-<!--            <id>sonatype-nexus-release</id>-->
-<!--            <url>https://s01.oss.sonatype.org/content/repositories/releases</url>-->
-<!--        </repository>-->
+        <repository>
+            <id>sonatype-nexus</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
     </distributionManagement>
 
     <repositories>
@@ -465,26 +465,26 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
-                <executions>
-                    <execution>
-                        <id>default-deploy</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <serverId>sonatype-nexus-snapshots</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-<!--                    <autoReleaseAfterClose>true</autoReleaseAfterClose>-->
-                    <skipStaging>true</skipStaging>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.sonatype.plugins</groupId>-->
+<!--                <artifactId>nexus-staging-maven-plugin</artifactId>-->
+<!--                <version>1.6.7</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>default-deploy</id>-->
+<!--                        <phase>deploy</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>deploy</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    <serverId>sonatype-nexus</serverId>-->
+<!--                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>-->
+<!--&lt;!&ndash;                    <autoReleaseAfterClose>true</autoReleaseAfterClose>&ndash;&gt;-->
+<!--                    <skipStaging>true</skipStaging>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
 <!--                <artifactId>maven-gpg-plugin</artifactId>-->
