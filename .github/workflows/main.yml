@@ -20,7 +20,7 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '11'
-          server-id: nexus
+          server-id: sonatype-nexus
           server-username: ${{ secrets.OSSRH_JIRA_ID }}
           server-password: ${{ secrets.OSSRH_JIRA_PASSWORD }}
 
