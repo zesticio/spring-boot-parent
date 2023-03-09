@@ -414,7 +414,7 @@
         </snapshotRepository>
         <repository>
             <id>sonatype-nexus-release</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <url>https://s01.oss.sonatype.org/content/groups/staging</url>
         </repository>
     </distributionManagement>
 
@@ -465,54 +465,6 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.sonatype.plugins</groupId>-->
-<!--                <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--                <version>1.6.7</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>default-deploy</id>-->
-<!--                        <phase>deploy</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>deploy</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <serverId>sonatype-nexus</serverId>-->
-<!--                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>-->
-<!--&lt;!&ndash;                    <autoReleaseAfterClose>true</autoReleaseAfterClose>&ndash;&gt;-->
-<!--                    <skipStaging>true</skipStaging>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                <version>1.5</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>sign-artifacts</id>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>sign</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <gpgArguments>-->
-<!--                        <arg>&#45;&#45;pinentry-mode</arg>-->
-<!--                        <arg>loopback</arg>-->
-<!--                    </gpgArguments>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-deploy-plugin</artifactId>-->
-<!--                <version>2.8.1</version>-->
-<!--                <configuration>-->
-<!--                    <skip>true</skip>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
         </plugins>
         <pluginManagement>
             <plugins>
