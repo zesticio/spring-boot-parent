@@ -8,33 +8,28 @@
     <servers>
         <server>
             <id>registry.hub.docker.com</id>
-            <username>${env.DOCKERHUB_USERNAME}</username>
-            <password>${env.DOCKERHUB_PASSWORD}</password>
+            <username>zesticio</username>
+            <password>dckr_pat_p4mDluNiyLQhx1cpa6kngonC2ac</password>
             <configuration>
-                <email>${env.EMAIL}</email>
+                <email>deebendu.kumar@zestic.in</email>
             </configuration>
         </server>
         <server>
-            <id>sonatype-nexus-snapshots</id>
-            <username>eJjlCsNs</username>
-            <password>U9+z8pZyFI0jk11dXcMX1DkFdCqlQKM+YELnymqcb7CV</password>
-        </server>
-        <server>
-            <id>sonatype-nexus-release</id>
+            <id>ossrh</id>
             <username>eJjlCsNs</username>
             <password>U9+z8pZyFI0jk11dXcMX1DkFdCqlQKM+YELnymqcb7CV</password>
         </server>
     </servers>
-    <!--    <profiles>-->
-    <!--        <profile>-->
-    <!--            <id>sonatype-nexus</id>-->
-    <!--            <activation>-->
-    <!--                <activeByDefault>true</activeByDefault>-->
-    <!--            </activation>-->
-    <!--            <properties>-->
-    <!--                <gpg.executable>gpg</gpg.executable>-->
-    <!--                <gpg.passphrase>${env.OSSRH_GPG_SECRET_KEY_PASSWORD}</gpg.passphrase>-->
-    <!--            </properties>-->
-    <!--        </profile>-->
-    <!--    </profiles>-->
+    <profiles>
+        <profile>
+            <id>sonatype-nexus-snapshots</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <gpg.executable>gpg</gpg.executable>
+                <gpg.passphrase>Reset@123</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
 </settings>
