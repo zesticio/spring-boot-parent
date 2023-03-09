@@ -481,7 +481,8 @@
                 <configuration>
                     <serverId>nexus</serverId>
                     <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+<!--                    <autoReleaseAfterClose>true</autoReleaseAfterClose>-->
+                    <skipStaging>true</skipStaging>
                 </configuration>
             </plugin>
 <!--            <plugin>-->
