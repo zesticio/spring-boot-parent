@@ -44,7 +44,7 @@ jobs:
         run: |
           mvn \
             -B \
-            --settings settings.xml \
+            --settings ${{ secrets.SETTINGS }} \
             --no-transfer-progress \
             --batch-mode \
             -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} \
