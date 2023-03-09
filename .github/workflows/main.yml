@@ -20,7 +20,7 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '11'
-          server-id: sonatype-nexus-snapshots
+          server-id: ossrh
           server-username: MAVEN_USERNAME
           server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
@@ -44,7 +44,6 @@ jobs:
         run: |
           mvn \
             -B \
-            --settings ${{ secrets.SETTINGS }} \
             --no-transfer-progress \
             --batch-mode \
             -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} \
