@@ -15,7 +15,7 @@
             </configuration>
         </server>
         <server>
-            <id>sonatype-nexus</id>
+            <id>sonatype-nexus-snapshots</id>
             <username>${env.OSSRH_JIRA_ID}</username>
             <password>${env.OSSRH_JIRA_PASSWORD}</password>
         </server>
