@@ -1,4 +1,4 @@
-name: Deploy to artifactory
+name: Deploy to maven central
 
 on:
   # Triggers the workflow on push or pull request events but only for dev branch
@@ -48,4 +48,5 @@ jobs:
             --no-transfer-progress \
             --batch-mode \
             -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} \
+            -s $GITHUB_WORKSPACE/settings.xml \
             clean deploy -P release
